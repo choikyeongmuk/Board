@@ -126,6 +126,7 @@ public class BoardController extends UiUtils {
 
 		List<AttachDTO> fileList = boardService.getAttachFileList(idx); // 추가된 로직
 		model.addAttribute("fileList", fileList); // 추가된 로직
+		
 
 		return "board/view";
 	}
@@ -150,6 +151,5 @@ public class BoardController extends UiUtils {
 		}
 
 		return showMessageWithRedirect("게시글 삭제가 완료되었습니다.", "/board/list.do", Method.GET, pagingParams, model);
-	}
-
+	}	
 }

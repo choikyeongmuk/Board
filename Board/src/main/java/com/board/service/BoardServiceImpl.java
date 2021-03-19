@@ -47,7 +47,6 @@ public class BoardServiceImpl implements BoardService {
 				}
 			}
 		}
-
 		return (queryResult > 0);
 	}
 
@@ -73,6 +72,7 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public BoardDTO getBoardDetail(Long idx) {
+		boardMapper.boardCnt(idx);
 		return boardMapper.selectBoardDetail(idx);
 	}
 
@@ -123,6 +123,5 @@ public class BoardServiceImpl implements BoardService {
 	public AttachDTO getAttachDetail(Long idx) {
 		return attachMapper.selectAttachDetail(idx);
 	}
-
 	
 }
